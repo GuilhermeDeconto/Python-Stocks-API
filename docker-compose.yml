@@ -1,0 +1,16 @@
+version: '3'
+services:
+   web:
+      container_name: stocks-api
+      hostname: stocks-api
+      build: .
+      ports:
+         - "5000:5000"
+      volumes:
+         - .:/code
+      networks:
+         - stocks-net
+
+networks:
+  stocks-net:
+    driver: bridge
